@@ -1,0 +1,16 @@
+services:
+  backend:
+    build: ./backend
+    environment:
+      SECRET_KEY: change-this-in-production
+      DATABASE_URL: sqlite:////app/data/fitwell.db
+    volumes: ["db-data:/app/data"]
+    ports: ["8000:8000"]
+  frontend:
+    build: ./frontend
+    environment:
+      API_URL: http://backend:8000
+    ports: ["5173:5173"]
+    depends_on: [backend]
+volumes:
+  db-data:

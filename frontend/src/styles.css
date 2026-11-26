@@ -1,0 +1,42 @@
+:root { --paper:#f6f5ef; --card:#fff; --ink:#1f2d28; --muted:#627069; --line:#dadcd2;
+  --green:#2c6a54; --green-dark:#21503f; --gold:#d19a2a; --brick:#b3493b; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--paper); color:var(--ink); font:17px/1.65 "Nunito Sans",system-ui,sans-serif; }
+h1,h2,h3,.brand { font-family:"Newsreader",Georgia,serif; line-height:1.2; }
+h1 { font-size:clamp(2rem,5vw,2.8rem); margin:8px 0 14px; } h2 { margin:0 0 12px; } h3 { margin:18px 0 6px; font-size:1.1rem; }
+a { color:var(--green); }
+.top { display:flex; justify-content:space-between; align-items:center; max-width:960px; margin:0 auto; padding:20px; }
+.brand { font-size:1.6rem; font-weight:700; text-decoration:none; }
+.top nav { display:flex; gap:18px; align-items:center; }
+.top nav a { color:var(--ink); text-decoration:none; padding-bottom:2px; border-bottom:2px solid transparent; }
+.top nav a.active { border-color:var(--gold); }
+main { max-width:960px; margin:0 auto; padding:10px 20px 40px; }
+.split { display:grid; grid-template-columns:1.2fr 1fr; gap:40px; align-items:start; padding-top:20px; }
+.lead { color:var(--muted); max-width:46ch; font-size:1.1rem; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:22px; margin-bottom:18px; }
+label { display:block; font-weight:700; margin:14px 0 6px; }
+input,textarea { width:100%; font:inherit; color:inherit; padding:10px 12px; border:1px solid var(--line); border-radius:8px; background:#fdfdfb; }
+input:focus,textarea:focus,button:focus-visible,a:focus-visible { outline:3px solid #9cc7b5; outline-offset:1px; }
+button { font:inherit; font-weight:700; cursor:pointer; border:0; border-radius:8px; }
+button.primary { background:var(--green); color:#fff; padding:11px 24px; margin-top:18px; }
+button.primary:hover:not(:disabled) { background:var(--green-dark); } button:disabled { opacity:.55; cursor:wait; }
+button.ghost { background:none; color:var(--green); padding:4px 8px; } button.danger { color:var(--brick); }
+.error { color:var(--brick); font-weight:600; margin:12px 0 0; } .small { font-size:.92rem; color:var(--muted); margin:14px 0 0; }
+.result { border-left:6px solid var(--gold); } .result.good { border-left-color:var(--green); } .result.low { border-left-color:var(--brick); }
+.score { display:flex; align-items:baseline; gap:12px; } .score b { font:700 3rem "Newsreader",serif; } .score span { color:var(--muted); }
+.breakdown { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:16px 0 4px; }
+.breakdown div { background:#f7f8f3; border:1px solid var(--line); border-radius:8px; padding:10px; }
+.breakdown b { display:block; text-transform:capitalize; } .breakdown span { color:var(--muted); font-size:.82rem; }
+.evidence { margin-top:10px; font-size:.92rem; } .evidence summary { cursor:pointer; color:var(--green); font-weight:700; }
+.evidence p { margin:8px 0; } .disclaimer { margin-top:18px; padding-top:12px; border-top:1px solid var(--line); color:var(--muted); font-size:.82rem; }
+.chips { display:flex; flex-wrap:wrap; gap:8px; } .chip { padding:3px 12px; border-radius:99px; font-size:.9rem; font-weight:600; }
+.chip.have { background:#dcebe3; color:var(--green-dark); } .chip.need { background:#f6e6c3; color:#7b5712; }
+.stats { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:20px; }
+.stats div { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px; }
+.stats b { display:block; font:700 2rem "Newsreader",serif; } .stats span { color:var(--muted); font-size:.92rem; }
+.list { list-style:none; padding:0; margin:0; } .list .card { padding:16px 20px; margin-bottom:12px; }
+.head { display:flex; justify-content:space-between; gap:12px; align-items:center; flex-wrap:wrap; font-size:.95rem; }
+.head strong { font-size:1.05rem; } .track { height:10px; background:#e8eae1; border-radius:99px; margin:10px 0; overflow:hidden; }
+.fill { height:100%; background:var(--green); }
+footer { text-align:center; color:var(--muted); font-size:.9rem; padding:24px; border-top:1px solid var(--line); max-width:960px; margin:0 auto; }
+@media (max-width:720px) { .split { grid-template-columns:1fr; gap:10px; } .stats { grid-template-columns:1fr; } }
